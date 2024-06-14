@@ -4,6 +4,7 @@ export interface Config {
 
 const env = (window as any).env
 
+
 export const config: Config = {
   serverUrl: env?.SERVER_URL || '',
 }
