@@ -179,7 +179,7 @@
         return [
           this.streamTitle || this.track?.title,
           formatArtists(this.track?.artists || []) || this.track?.album,
-          'Airsonic (refix)'
+          'MesonMusic'
         ].filter(x => !!x).join(' • ')
       }
     },
