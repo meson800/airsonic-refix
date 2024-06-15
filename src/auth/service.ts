@@ -33,10 +33,10 @@ export class AuthService {
   }
 
   async autoLogin(): Promise<boolean> {
-    if (!this.server || !this.username) {
-      return false
-    }
+    // Attempt to get credentials from our server 
+    const creds = await fetchCredentials()
     try {
+      await this.loginWithPassword(creds.server, creds.username, creds.password)
       const auth = { salt: this.salt, hash: this.hash, password: this.password }
       await login(this.server, this.username, auth)
       this.authenticated = true
@@ -83,6 +83,15 @@ export class AuthService {
   isAuthenticated() {
     return this.authenticated
   }
+}
+
+async function fetchCredentials() {
+  const url = `/api/credentials`
+  return fetch(url)
+    .then(response => response.ok
+      ? response.json()
+      : Promise.reject(new Error(response.statusText))
+    )
 }
 
 async function login(server: string, username: string, auth: Auth) {
