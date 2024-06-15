@@ -33,7 +33,7 @@ export class AuthService {
   }
 
   async autoLogin(): Promise<boolean> {
-    // Attempt to get credentials from our server 
+    // Attempt to get credentials from our server
     const creds = await fetchCredentials()
     try {
       await this.loginWithPassword(creds.server, creds.username, creds.password)
@@ -86,7 +86,7 @@ export class AuthService {
 }
 
 async function fetchCredentials() {
-  const url = `/api/credentials`
+  const url = '/api/credentials'
   return fetch(url)
     .then(response => response.ok
       ? response.json()
