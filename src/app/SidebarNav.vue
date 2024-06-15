@@ -7,6 +7,11 @@
       </button>
     </div>
 
+    <div>
+      <span style="">User: </span>
+      <span class="badge rounded-pill bg-primary text-white text-monospace">{{ auth.username }}</span>
+    </div>
+
     <router-link class="nav-link" :to="{name: 'home'}" exact>
       <Icon icon="discover" class="" /> Discover
     </router-link>
