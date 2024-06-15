@@ -64,6 +64,7 @@
   import Logo from './Logo.vue'
   import PlaylistNav from '@/library/playlist/PlaylistNav.vue'
   import { useMainStore } from '@/shared/store'
+  import { useAuth } from '@/auth/service'
 
   export default defineComponent({
     components: {
@@ -73,6 +74,7 @@
     setup() {
       return {
         store: useMainStore(),
+        auth: useAuth(),
       }
     },
   })
