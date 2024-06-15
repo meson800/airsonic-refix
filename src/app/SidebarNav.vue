@@ -7,7 +7,7 @@
       </button>
     </div>
 
-    <div>
+    <div class="ml-3 mb-3">
       <span style="">User: </span>
       <span class="badge rounded-pill bg-primary text-white text-monospace">{{ auth.username }}</span>
     </div>
