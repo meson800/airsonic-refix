@@ -8,7 +8,7 @@
 
     <SearchForm />
 
-    <template v-if="store.username">
+    <template v-if="false">
       <b-dropdown variant="link" right no-caret>
         <template #button-content>
           <Avatar>
