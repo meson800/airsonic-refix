@@ -57,6 +57,19 @@
     </router-link>
 
     <PlaylistNav />
+
+    <small class="sidebar-heading text-muted">
+      Server
+    </small>
+
+    <router-link class="nav-link" :to="{name: 'credentials'}">
+      <Icon icon="discover" /> Connect apps
+    </router-link>
+
+    <router-link class="nav-link" :to="{name: 'ingest'}">
+      <Icon icon="plus" /> Add music
+    </router-link>
+
   </nav>
 </template>
 <script lang="ts">
