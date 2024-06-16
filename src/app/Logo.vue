@@ -10,7 +10,7 @@
   </div>
 </template>
 <style scoped>
-  svg {
+  img {
     height: 32px;
     margin-bottom: 2px;
   }
