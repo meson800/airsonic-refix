@@ -18,8 +18,8 @@ import SearchResult from '@/library/search/SearchResult.vue'
 import { AuthService } from '@/auth/service'
 import ArtistTracks from '@/library/artist/ArtistTracks.vue'
 import Files from '@/library/file/Files.vue'
-import Credentials from '@/library/server_actions/Credentials.vue'
-import Ingest from '@/library/server_actions/Ingest.vue'
+import Credentials from '@/server_actions/Credentials.vue'
+import Ingest from '@/server_actions/Ingest.vue'
 
 export function setupRouter(auth: AuthService) {
   const router = new Router({
