@@ -9,6 +9,7 @@ type Auth = { password?: string, salt?: string, hash?: string }
 export class AuthService {
   public server = ''
   public username = ''
+  public cached_password = ''
   private salt = ''
   private hash = ''
   private password = ''
@@ -62,6 +63,7 @@ export class AuthService {
     }
     this.server = server
     this.username = username
+    this.cached_password = password
     this.authenticated = true
     this.saveSession()
   }
