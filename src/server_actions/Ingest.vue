@@ -16,8 +16,8 @@
     <h3 class="mb-3">Download queue</h3>
     <ul class="list-group">
       <li v-for="(entry, index) in queueEntries" :key="index" class="list-group-item">
-        <span class="badge bg-{{ badgeColor(entry) }} text-white text-monospace"> {{ entry.stage }}</span>
-        <span class="ml-2"><a href="{{ entry.url }}">{{ entry.url }}</a>{{ entry.include_albums ? " (including albums)" : "" }}</span>
+        <span v-bind:class="badgeClass(entry)"> {{ entry.stage }}</span>
+        <span class="ml-2"><a href="{{ entry.url }}">{{ entry.url }}</a>{{ entry.include_albums ? " (including album)" : "" }}</span>
       </li>
     </ul>
   </div>
@@ -70,6 +70,9 @@
           return 'success'
         }
         return 'danger'
+      },
+      badgeClass(entry: any) {
+        return `badge text-white bg-${this.badgeColor(entry)}`
       }
     }
   })
